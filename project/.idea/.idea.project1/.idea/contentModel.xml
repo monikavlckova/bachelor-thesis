@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Monika\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Monika\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_project1.528584800.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Monika\project1" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="data.txt" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Backlight.cs" t="Include" />
+          <e p="BuildCube.cs" t="Include" />
+          <e p="Building.cs" t="Include" />
+          <e p="CameraMove.cs" t="Include" />
+          <e p="ChangeScene.cs" t="Include" />
+          <e p="Confirm.cs" t="Include" />
+          <e p="Data.cs" t="Include" />
+          <e p="Floors.cs" t="Include" />
+          <e p="MenuLevelEnabler.cs" t="Include" />
+          <e p="Notification.cs" t="Include" />
+          <e p="OwnTask.cs" t="Include" />
+          <e p="Plan.cs" t="Include" />
+          <e p="PlanDrawer.cs" t="Include" />
+          <e p="PlanGenerator.cs" t="Include" />
+          <e p="progressBar.cs" t="Include" />
+          <e p="Squere.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="project1.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

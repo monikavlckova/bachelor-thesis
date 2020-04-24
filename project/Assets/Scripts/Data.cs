@@ -1,0 +1,89 @@
+﻿using System;
+using UnityEngine;
+using System.IO;
+
+public class Data : MonoBehaviour
+{
+    private string path;
+
+    public static Data DATA;
+    public int[] progressInLvls = new int[4];
+    public int heighestLevelCompleted;
+    public bool createdTask = false;
+    public int[,] createdBuildingPlan;
+    public int[,] createdPlan1;
+    public int[,] createdPlan2;
+    public int[,] createdPlan3;
+    public int[,] createdPlan4;
+
+    private void Start()
+    {
+        path = Path.Combine(Application.persistentDataPath, "data.txt");
+        Debug.Log(path);
+        try
+        {
+            if (!File.Exists(path))
+            {
+                StreamWriter file = File.CreateText(path);
+                file.WriteLine("0\n0\n0\n0\n0");
+                file.Close();
+            }
+        }
+        catch (Exception e)
+        {
+            // ignored
+        }
+
+        LoadData();
+    }
+
+    public void LoadData()
+    {
+        Debug.Log("Data.cs load data");
+        path = Path.Combine(Application.persistentDataPath, "data.txt");
+
+        string[] text = File.ReadAllLines(path);
+        progressInLvls[0] = int.Parse(text[0]);
+        progressInLvls[1] = int.Parse(text[1]);
+        progressInLvls[2] = int.Parse(text[2]);
+        progressInLvls[3] = int.Parse(text[3]);
+        heighestLevelCompleted = int.Parse(text[4]);
+    }
+
+    public void UpdateData(int level, int progress)
+    {
+        increaseHeighestLevel(level, progress);
+        path = Path.Combine(Application.persistentDataPath, "data.txt");
+        string data = "";
+
+        for (int i = 0; i < level - 1; i++) data += progressInLvls[i] + "\n";
+        data += progress + "\n";
+        for (int i = level; i < 4; i++) data += progressInLvls[i] + "\n";
+        data += heighestLevelCompleted;
+
+        File.WriteAllText(path, data);
+        LoadData();
+    }
+
+    private void increaseHeighestLevel(int level, int progress)
+    {
+        if (progress > 9 && level > heighestLevelCompleted)
+        {
+            heighestLevelCompleted = level;
+        }
+    }
+
+    void Awake()
+    {
+        if (DATA == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            DATA = this;
+        }
+        else if (DATA != this)
+        {
+            Destroy(gameObject);
+        } 
+    }
+
+}

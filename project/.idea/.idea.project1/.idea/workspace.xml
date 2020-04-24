@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98b7c0c2-b6ea-4bac-be2e-c83324f10365" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Plan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Building.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/OwnTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Confirm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Squere.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlanGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Floors.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlanDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Backlight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Notification.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scenes/CameraOrbit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/BackgroundOrbit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/LightOrbit.cs" />
+        <option value="$PROJECT_DIR$/Assets/progressBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/ProgressBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/ItemDragHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/ItemDropHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/OnClickHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/RotateCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraOrbit.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraMoveWithTouch.cs" />
+        <option value="$PROJECT_DIR$/Assets/ChangeScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/BuildBlock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMoveWithTouch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RotCam.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BacklightSwitcher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Backlight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildBlock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/new classes/Data.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/new classes/DataFile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraOrbit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/data.txt" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StaticClass.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CrossSceneInformations.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DataFile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingToPlan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatedTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Notification.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelImageColor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Floors.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlanGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Squere.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlanDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OwnTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Plan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Confirm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Building.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VvsUlYnGmQ5BqgtwnV6uzxUCe8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98b7c0c2-b6ea-4bac-be2e-c83324f10365" name="Default Changelist" comment="" />
+      <created>1578144931051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578144931051</updated>
+      <workItem from="1578145014848" duration="3631000" />
+      <workItem from="1580224404700" duration="3507000" />
+      <workItem from="1580574119512" duration="36188000" />
+      <workItem from="1581184930061" duration="8538000" />
+      <workItem from="1581254709071" duration="10666000" />
+      <workItem from="1581581466881" duration="21087000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1581193213575">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1581193213575" />
+    <state x="318" y="21" width="672" height="631" key="search.everywhere.popup" timestamp="1587307283161">
+      <screen x="0" y="0" width="1280" height="688" />
+    </state>
+    <state x="318" y="21" width="672" height="631" key="search.everywhere.popup/0.0.1280.688@0.0.1280.688" timestamp="1587307283161" />
+    <state x="339" y="22" width="672" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1580587687365" />
+  </component>
+</project>
