@@ -47,15 +47,7 @@ public class CameraMove : MonoBehaviour
                 else if (rotation.x > 90f)
                     rotation.x = 90f;
             }
-
-            if (Input.touchCount == 2)
-            {
-                
-            }
-
-            {
-                
-            }
+            
         }
         Quaternion rotationXY = Quaternion.Euler(rotation.x, rotation.y, 0);
         this.transform.parent.rotation = Quaternion.Lerp(this.transform.parent.rotation, rotationXY, Time.deltaTime*dempening);
