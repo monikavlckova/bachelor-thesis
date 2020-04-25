@@ -15,7 +15,6 @@ public class ChangeScene : MonoBehaviour
     
     public void ResetLevel(int level)
     {
-        Debug.Log("Data.cs reset level");
         Data.DATA.UpdateData(level, 0);
     }
 }

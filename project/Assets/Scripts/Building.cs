@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Building : MonoBehaviour
     private void Start()
     {
         int progress = Data.DATA.progressInLvls[level - 1];
-        
+
         if (Data.DATA.createdTask)
         {
             plan = new Plan(Data.DATA.createdBuildingPlan);
@@ -24,7 +25,8 @@ public class Building : MonoBehaviour
         {
             SIZE = progress / 4 + 2;
             if (SIZE > 4) SIZE = 4;
-            plan = new Plan(SIZE, FLOORS);
+            plan = new Plan(SIZE, FLOORS, progress);
+            GameObject.Find("Ground").transform.localScale = new Vector3(SIZE, 1.5f, SIZE);
         }
         HALF = (float) SIZE / 2;
         
@@ -34,6 +36,8 @@ public class Building : MonoBehaviour
             if (level != 1)
             {
                 GameObject.Find("Building").GetComponent<BuildCube>().Lock();
+                GameObject.Find("resetButton").GetComponent<Button>().enabled = false;
+                GameObject.Find("resetButton").GetComponent<Image>().enabled = false;
             }
 
             if (level == 2)
@@ -48,14 +52,7 @@ public class Building : MonoBehaviour
             if (level == 2)
             {
                 GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().Draw(plan.getPlan());
-            }else if (level == 3)
-            {
-                Debug.Log("else 3");
-            }else if (level == 4)
-            {
-                Debug.Log("else 4");
             }
-                
         }
         if (level == 1)
         {
@@ -65,7 +62,6 @@ public class Building : MonoBehaviour
 
     private void Build(int[,] buildingPlan)
     {
-        Debug.Log("build");
         for (int i = 0; i < SIZE; i++)
         {
             for (int j = 0; j < SIZE; j++)
@@ -93,6 +89,14 @@ public class Building : MonoBehaviour
             }
         }
         return plan;
+    }
+    
+    public void Destroy()
+    {
+        foreach (Transform cube in Parent.transform)
+        {
+            GameObject.Destroy(cube.gameObject);
+        }
     }
     public Plan getPlan()
     {

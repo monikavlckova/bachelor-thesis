@@ -29,6 +29,7 @@ public class Floors : MonoBehaviour
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i].enabled = false;
+                buttons[i].image.enabled = false;
             }
         }
     }

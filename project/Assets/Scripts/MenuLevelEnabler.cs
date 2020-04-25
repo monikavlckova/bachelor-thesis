@@ -10,7 +10,7 @@ public class MenuLevelEnabler : MonoBehaviour
     public Color enabledButtonImage = Color.white;
     public Color disabledButton = Color.black;
     public Color disabledButtonImage = Color.gray;
-    
+
     // Update is called once per frame
     void Start()
     {

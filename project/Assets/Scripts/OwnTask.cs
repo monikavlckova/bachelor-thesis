@@ -69,7 +69,7 @@ public class OwnTask : MonoBehaviour
 
     public bool IsValid()
     {
-        Plan p = new Plan(1,3);
+        Plan p = new Plan(1,3, 1);
         return 
         p.equals(Data.DATA.createdPlan1, Data.DATA.createdBuildingPlan) ^
         p.equals(Data.DATA.createdPlan2, Data.DATA.createdBuildingPlan) ^

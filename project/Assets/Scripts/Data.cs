@@ -39,7 +39,6 @@ public class Data : MonoBehaviour
 
     public void LoadData()
     {
-        Debug.Log("Data.cs load data");
         path = Path.Combine(Application.persistentDataPath, "data.txt");
 
         string[] text = File.ReadAllLines(path);

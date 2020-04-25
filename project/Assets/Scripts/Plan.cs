@@ -6,15 +6,19 @@ public class Plan
 {
     private int[,] plan;
     private Random rnd = new Random();
+    private int level;
 
     public int[,] getPlan()
     {
         return plan;
     }
 
-    public Plan(int size, int floors)
+    public Plan(int size, int floors, int progress)
     {
-        plan = Generate(size, floors);
+        int min = progress + 2;
+        int max = min + 1 + progress/2;
+        Debug.Log(min + " " + max);
+        plan = Generate(size, floors, min, max);
     }
 
     public Plan(int[,] plan)
@@ -22,34 +26,34 @@ public class Plan
         this.plan = plan;
     }
 
-    public int[,] Generate(int size, int floors)
+    public int[,] Generate(int size, int floors, int min, int max)
     {
         int[,] buildingPlan = new int[size, size];
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                int cubes = rnd.Next(floors + 1);
-                if (cubes == 4) cubes = rnd.Next(floors + 1);
-                if (cubes != 0) cubes = rnd.Next(floors + 1);
+                int num = rnd.Next(floors + 1);
+                int cubes = rnd.Next(num + 1);
                 buildingPlan[i, j] = cubes;
             }
         }
-
-        while (!isBuilding(buildingPlan))
+        while (!isBuilding(buildingPlan, min, max))
         {
-            buildingPlan = Generate(size, floors);
+            buildingPlan = Generate(size, floors, min, max);
         }
 
         return buildingPlan;
     }
 
-    private bool isBuilding(int[,] buildingPlan)
+    private bool isBuilding(int[,] buildingPlan, int min, int max)
     {
         int size = buildingPlan.GetLength(0);
 
+        int numOfCubes = numberOfCubes(buildingPlan);
         int buildingSize = cubesInFloors(buildingPlan)[0];
-        if (buildingSize == 0) return false;
+        if (numOfCubes < min) return false;
+        if (numOfCubes > max) return false;
         bool[,] visited = new bool[size, size];
         for (int i = 0; i < size; i++)
         {
@@ -84,7 +88,7 @@ public class Plan
             for (int j = 0; j < size; j++)
             {
                 int value = plan[i, j];
-                if (value > 0) value += rnd.Next(2);
+                if (value > 0) value = rnd.Next(4)+1;
                 value = value > 4 ? 4 : value;
                 modifiedPlan[i, j] = value;
             }
@@ -164,7 +168,6 @@ public class Plan
 
     public bool equals(int[,] plan1, int[,] plan2)
     {
-        Debug.Log("equals");
         int[,] rotated1 = rotate90(plan2);
         int[,] rotated2 = rotate90(rotated1);
         int[,] rotated3 = rotate90(rotated2);
@@ -174,23 +177,34 @@ public class Plan
 
     private bool equals1(int[,] plan1, int[,] plan2)
     {
-        Debug.Log("equals1");
         if (plan1.Length != plan2.Length || plan1.GetLength(0) != plan2.GetLength(0))
         {
-            Debug.Log("ina velkost");
             return false;
         }
         for (int i = 0; i < plan1.GetLength(0); i++)
         {
             if (!plan1.Cast<int>().SequenceEqual(plan2.Cast<int>()))
             {
-                Debug.Log("false");
                 return false;
             }
         }
-        Debug.Log("true");
         return true;
+    }
 
+    private string print(int[,] plan)
+    {
+        string s = "[";
+        for (int i = 0; i < plan.GetLength(0); i++)
+        {
+            s += "[";
+            for (int j = 0; j < plan.GetLength(1); j++)
+            {
+                s += plan[i, j] + ",";
+            }
+            s += "]";
+        }
+        s += "]";
+        return s;
     }
 
 }

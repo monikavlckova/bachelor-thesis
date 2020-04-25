@@ -18,8 +18,7 @@ public class BuildCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
-            Input.GetMouseButtonDown(0))
+        if (!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -33,8 +32,7 @@ public class BuildCube : MonoBehaviour
                 cubePosition.x = (float) Math.Round(cubePosition.x, MidpointRounding.AwayFromZero);
                 cubePosition.y = (float) Math.Round(cubePosition.y, MidpointRounding.AwayFromZero);
                 cubePosition.z = (float) Math.Round(cubePosition.z, MidpointRounding.AwayFromZero);
-                Debug.Log(" cube pos:" + cubePosition.x + " " + cubePosition.y + " " + cubePosition.z);
-                
+
                 if (SIZE % 2 == 0)
                 {
                     cubePosition.x -= 0.5f;
