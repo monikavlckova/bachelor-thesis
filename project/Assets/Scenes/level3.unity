@@ -547,6 +547,12 @@ MonoBehaviour:
   - {fileID: 1567655359}
   - {fileID: 599701720}
   values: 0000000000000000
+  level: 3
+  buttons:
+  - {fileID: 1982186097}
+  - {fileID: 1894206635}
+  - {fileID: 11921749}
+  - {fileID: 1048026804}
 --- !u!114 &55771571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,6 +2273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1961499904}
+  - component: {fileID: 1961499905}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -2288,6 +2295,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961499905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961499903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8b43dbf70ff3140bcbf7e661bfd487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newCube: {fileID: 3422366898687548384, guid: 68f22c0c831a55548af536cf372d2979, type: 3}
+  locked: 0
+  lockImage: {fileID: 0}
+  unlockImage: {fileID: 0}
+  button: {fileID: 0}
+  SIZE: 5
 --- !u!1 &1963313639
 GameObject:
   m_ObjectHideFlags: 0

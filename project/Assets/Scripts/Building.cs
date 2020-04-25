@@ -27,16 +27,39 @@ public class Building : MonoBehaviour
             plan = new Plan(SIZE, FLOORS);
         }
         HALF = (float) SIZE / 2;
+        
+        if (level == 1 || Data.DATA.progressInLvls[level - 1] % 2 == 0 || Data.DATA.createdTask)
+        {
+            Build(plan.getPlan());
+            if (level != 1)
+            {
+                GameObject.Find("Building").GetComponent<BuildCube>().Lock();
+            }
 
-        Build(plan.getPlan());
+            if (level == 2)
+            {
+                GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().InitializeEmpty(SIZE,SIZE, true);
+            }
+        }
+        else
+        {
+            GameObject.Find("Building").GetComponent<BuildCube>().Unlock();
+            GameObject.Find("Building").GetComponent<BuildCube>().SIZE = SIZE;
+            if (level == 2)
+            {
+                GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().Draw(plan.getPlan());
+            }else if (level == 3)
+            {
+                Debug.Log("else 3");
+            }else if (level == 4)
+            {
+                Debug.Log("else 4");
+            }
+                
+        }
         if (level == 1)
         {
             this.GetComponent<PlanGenerator>().GeneratePlans();
-        }
-
-        if (level == 2)
-        {
-            GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().InitializeEmpty(SIZE,SIZE);
         }
     }
 
@@ -54,6 +77,22 @@ public class Building : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public int[,] TranslateBuildingToPlan()
+    {
+        int[,] plan = new int[SIZE,SIZE];
+        foreach (Transform cube in Parent.transform)
+        {
+            int x = (int)(SIZE/2f+(cube.position.x));
+            int y = (int)(1+(cube.position.y));
+            int z = (int)(SIZE/2f-(cube.position.z));
+            if (y > plan[z,x])
+            {
+                plan[z, x] = y;
+            }
+        }
+        return plan;
     }
     public Plan getPlan()
     {

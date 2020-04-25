@@ -523,7 +523,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 47a196814151777428fdcbdd68baf903, type: 3}
   - {fileID: 21300000, guid: 58c9175888e39e445b9fd65f0455dfb1, type: 3}
   - {fileID: 21300000, guid: 03ba59c78f64f2f478b19c178906371b, type: 3}
-  square: {fileID: 2700552312805206660, guid: b448c6ef4fbef6548a42c1eb55db0fea, type: 3}
+  squareUnclikable: {fileID: 368528241767856464, guid: 8beaa2ce2bf85504b9c8c027f8abed16,
+    type: 3}
+  squareClickable: {fileID: 2700552312805206660, guid: b448c6ef4fbef6548a42c1eb55db0fea,
+    type: 3}
 --- !u!114 &622842816
 MonoBehaviour:
   m_ObjectHideFlags: 0

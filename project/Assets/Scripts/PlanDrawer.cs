@@ -8,7 +8,8 @@ public class PlanDrawer : MonoBehaviour
 {
     private int[,] buildingPlan;
     public Sprite[] sprites = new Sprite[4];
-    public Image square;
+    public Image squareUnclikable;
+    public Image squareClickable;
     private int SQUARESIZE = 70;
     private int SPACE = 5;
     private int PLANSIZE = 350;
@@ -18,7 +19,7 @@ public class PlanDrawer : MonoBehaviour
     {
         int w = buildingPlan.GetLength(0);
         int h = buildingPlan.GetLength(1);
-        InitializeEmpty(w, h);
+        InitializeEmpty(w, h, false);
 
         for (int i = 0; i < w; i++)
         {
@@ -33,8 +34,10 @@ public class PlanDrawer : MonoBehaviour
         }
     }
 
-    public void InitializeEmpty(int w, int h)
+    public void InitializeEmpty(int w, int h, bool clickable)
     {
+        Image square = clickable ? squareClickable : squareUnclikable;
+        
         RectTransform r = (RectTransform)this.transform;;
         PLANSIZE = (int)r.rect.width;
         SPACE = PLANSIZE / 70;

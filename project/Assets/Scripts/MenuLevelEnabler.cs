@@ -26,13 +26,13 @@ public class MenuLevelEnabler : MonoBehaviour
         transform.Find("Reset").transform.GetComponent<Image>().color = enabledButton;
         transform.Find("Reset").transform.Find("Image").GetComponent<Image>().color = enabledButtonImage;
 
-        if (level >= Data.DATA.heighestLevelCompleted + 1)
+        if (level >= Data.DATA.highestLevelCompleted + 1)
         {
             transform.Find("Create").transform.GetComponent<Button>().enabled = false;
             transform.Find("Create").transform.GetComponent<Image>().color = disabledButton;
             transform.Find("Create").transform.Find("Image").GetComponent<Image>().color = disabledButtonImage;
         }
-        if (level > Data.DATA.heighestLevelCompleted + 1)
+        if (level > Data.DATA.highestLevelCompleted + 1)
         {
             GetComponent<Image>().color = Color.black;
             transform.Find("Play").transform.GetComponent<Button>().enabled = false;

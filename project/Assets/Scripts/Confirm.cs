@@ -30,7 +30,8 @@ public class Confirm : MonoBehaviour
     {
         Plan plan = GetComponent<Building>().getPlan();
         int[,] createdPlan = GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().TranslateImagePlanToPlan();
-        if (plan.equals(plan.getPlan(), createdPlan))
+        int[,] buildingPlan = GetComponent<Building>().TranslateBuildingToPlan();
+        if (plan.equals(plan.getPlan(), createdPlan) && plan.equals(plan.getPlan(), buildingPlan))
         {
             _enumerator = GetComponent<Notification>().show(true); 
             this.StartCoroutine(_enumerator);
@@ -46,7 +47,7 @@ public class Confirm : MonoBehaviour
 
     public void CheckLevel3()
     {
-        Plan plan = GetComponent<Building>().getPlan();
+        Plan plan = new Plan(GetComponent<Building>().TranslateBuildingToPlan());
         int floors = plan.numberOfFloors(plan.getPlan());
         int cubes = plan.numberOfCubes(plan.getPlan());
         int[] values = GetComponent<Floors>().values;
@@ -66,7 +67,7 @@ public class Confirm : MonoBehaviour
     
     public void CheckLevel4()
     {
-        Plan plan = GetComponent<Building>().getPlan();
+        Plan plan = new Plan(GetComponent<Building>().TranslateBuildingToPlan());
         int[] realValues = plan.cubesInFloors(plan.getPlan());
         int[] values = GetComponent<Floors>().values;
         

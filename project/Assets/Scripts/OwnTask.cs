@@ -18,10 +18,10 @@ public class OwnTask : MonoBehaviour
     {
         if (level == 1)
         {
-            GameObject.Find("buildingPlan1").GetComponent<PlanDrawer>().InitializeEmpty(5,5);
-            GameObject.Find("buildingPlan2").GetComponent<PlanDrawer>().InitializeEmpty(5,5);
-            GameObject.Find("buildingPlan3").GetComponent<PlanDrawer>().InitializeEmpty(5,5);
-            GameObject.Find("buildingPlan4").GetComponent<PlanDrawer>().InitializeEmpty(5,5);
+            GameObject.Find("buildingPlan1").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
+            GameObject.Find("buildingPlan2").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
+            GameObject.Find("buildingPlan3").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
+            GameObject.Find("buildingPlan4").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
         }
     }
 

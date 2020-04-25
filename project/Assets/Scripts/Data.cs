@@ -8,7 +8,7 @@ public class Data : MonoBehaviour
 
     public static Data DATA;
     public int[] progressInLvls = new int[4];
-    public int heighestLevelCompleted;
+    public int highestLevelCompleted;
     public bool createdTask = false;
     public int[,] createdBuildingPlan;
     public int[,] createdPlan1;
@@ -47,7 +47,7 @@ public class Data : MonoBehaviour
         progressInLvls[1] = int.Parse(text[1]);
         progressInLvls[2] = int.Parse(text[2]);
         progressInLvls[3] = int.Parse(text[3]);
-        heighestLevelCompleted = int.Parse(text[4]);
+        highestLevelCompleted = int.Parse(text[4]);
     }
 
     public void UpdateData(int level, int progress)
@@ -59,7 +59,7 @@ public class Data : MonoBehaviour
         for (int i = 0; i < level - 1; i++) data += progressInLvls[i] + "\n";
         data += progress + "\n";
         for (int i = level; i < 4; i++) data += progressInLvls[i] + "\n";
-        data += heighestLevelCompleted;
+        data += highestLevelCompleted;
 
         File.WriteAllText(path, data);
         LoadData();
@@ -67,9 +67,9 @@ public class Data : MonoBehaviour
 
     private void increaseHeighestLevel(int level, int progress)
     {
-        if (progress > 9 && level > heighestLevelCompleted)
+        if (progress > 9 && level > highestLevelCompleted)
         {
-            heighestLevelCompleted = level;
+            highestLevelCompleted = level;
         }
     }
 
