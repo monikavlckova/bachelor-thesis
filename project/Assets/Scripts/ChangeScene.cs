@@ -13,8 +13,8 @@ public class ChangeScene : MonoBehaviour
         Data.DATA.createdTask = false;
     }
     
-    public void ResetLevel(int level)
+    public void Reset()
     {
-        Data.DATA.UpdateData(level, 0);
+        Data.DATA.ResetData();
     }
 }

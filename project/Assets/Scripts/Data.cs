@@ -63,7 +63,16 @@ public class Data : MonoBehaviour
         File.WriteAllText(path, data);
         LoadData();
     }
+    
+    public void ResetData()
+    {
+        path = Path.Combine(Application.persistentDataPath, "data.txt");
+        string data = "0\n0\n0\n0\n0";
 
+        File.WriteAllText(path, data);
+        LoadData();
+    }
+    
     private void increaseHeighestLevel(int level, int progress)
     {
         if (progress > 9 && level > highestLevelCompleted)
