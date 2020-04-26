@@ -17,4 +17,9 @@ public class ChangeScene : MonoBehaviour
     {
         Data.DATA.ResetData();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

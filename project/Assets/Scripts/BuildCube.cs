@@ -18,8 +18,8 @@ public class BuildCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
-            (!locked && Input.GetMouseButtonUp(0)))
+        if ((!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            /*|| (!locked && Input.GetMouseButtonDown(0))*/)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

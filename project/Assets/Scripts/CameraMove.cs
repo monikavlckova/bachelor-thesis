@@ -41,15 +41,19 @@ public class CameraMove : MonoBehaviour
             {
                 rotation.y += touch.deltaPosition.x * intensity;
                 rotation.x -= touch.deltaPosition.y * intensity;
-                
-                if (rotation.x < 0f)
-                    rotation.x = 0f;
-                else if (rotation.x > 90f)
-                    rotation.x = 90f;
             }
-            
+            if (rotation.x < 0f) rotation.x = 0f;
+            else if (rotation.x > 90f) rotation.x = 90f; 
         }
+        /*if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 ))
+        {
+            rotation.y += Input.GetAxis("Mouse X") * intensity * 50;
+            rotation.x -= Input.GetAxis("Mouse Y") * intensity * 50;
+            if (rotation.x < 0f) rotation.x = 0f;
+            else if (rotation.x > 90f) rotation.x = 90f; 
+        }*/
         Quaternion rotationXY = Quaternion.Euler(rotation.x, rotation.y, 0);
         this.transform.parent.rotation = Quaternion.Lerp(this.transform.parent.rotation, rotationXY, Time.deltaTime*dempening);
+
     }
 }
