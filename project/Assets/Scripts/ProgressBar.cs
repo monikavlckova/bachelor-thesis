@@ -11,16 +11,16 @@ public class ProgressBar : MonoBehaviour
     private float progress = 0f;
     private Color32[] colorGardient = new[]
     {
-        new Color32(185, 18, 27, 255),
-        new Color32(178, 52, 19, 255),
-        new Color32(172, 92, 19, 255),
-        new Color32(165, 128, 20, 255),
-        new Color32(158, 159, 21, 255),
-        new Color32(117, 153, 21, 255),
-        new Color32(79, 146, 21, 255),
-        new Color32(45, 140, 22, 255),
-        new Color32(22, 134, 29, 255),
-        new Color32(22, 128, 57, 255)
+        new Color32(128, 20, 20, 255),
+        new Color32(167, 31, 23, 255),
+        new Color32(200, 63, 29, 255),
+        new Color32(207, 84, 29, 255),
+        new Color32(224, 153, 34, 255),
+        new Color32(233, 185, 27, 255),
+        new Color32(180, 206, 35, 255),
+        new Color32(119, 206, 35, 255),
+        new Color32(64, 161, 11, 255),
+        new Color32(11, 125, 43, 255)
     };
 
     void Start()
