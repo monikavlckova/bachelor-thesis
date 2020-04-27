@@ -42,8 +42,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LongClickButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Confirm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMove.cs" />
       </list>
     </option>

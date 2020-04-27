@@ -797,11 +797,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 874239428}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 468.25, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 250, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774204628
@@ -920,8 +920,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2003427731}
-  - {fileID: 1628796261}
   - {fileID: 774204627}
+  - {fileID: 1628796261}
   - {fileID: 2115343016}
   m_Father: {fileID: 257743846}
   m_RootOrder: 4
@@ -929,7 +929,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 480, y: 128}
-  m_SizeDelta: {x: 750, y: 180}
+  m_SizeDelta: {x: 675, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874239429
 MonoBehaviour:
@@ -997,8 +997,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newCube: {fileID: 3422366898687548384, guid: 68f22c0c831a55548af536cf372d2979, type: 3}
   locked: 0
-  lockImage: {fileID: 21300000, guid: 89c0e32cf4fd2004895257d0a891c316, type: 3}
-  unlockImage: {fileID: 21300000, guid: 2d03e452af989404283ba875b5eb9e1e, type: 3}
+  destroyMode: 0
+  destroyImage: {fileID: 21300000, guid: 3d69ef78bb291dd4ebdb157acafd7af6, type: 3}
+  buildImage: {fileID: 21300000, guid: 0ad586fe218daa9428618b3c74684f05, type: 3}
   button: {fileID: 2115343017}
   SIZE: 5
 --- !u!4 &929152688
@@ -1319,11 +1320,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 874239428}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 281.25, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628796262
@@ -1569,9 +1570,9 @@ RectTransform:
   m_Father: {fileID: 874239428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 93.75, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 75, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003427732
@@ -1811,7 +1812,7 @@ GameObject:
   - component: {fileID: 2115343018}
   - component: {fileID: 2115343017}
   m_Layer: 5
-  m_Name: lockBuildButton
+  m_Name: destroyBuildButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1831,9 +1832,9 @@ RectTransform:
   m_Father: {fileID: 874239428}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 656.25, y: 100}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 600, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115343017
@@ -1877,7 +1878,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 929152687}
-        m_MethodName: ChangeLockedState
+        m_MethodName: ChangeDestroyModeState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1900,12 +1901,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d03e452af989404283ba875b5eb9e1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ad586fe218daa9428618b3c74684f05, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
