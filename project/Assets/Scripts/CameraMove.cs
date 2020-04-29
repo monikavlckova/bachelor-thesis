@@ -11,27 +11,9 @@ public class CameraMove : MonoBehaviour
     
     private void Start()
     {
-        touchZone = new Rect(0, 0, Screen.width*0.5f, Screen.height);
+        touchZone = new Rect(0, 0, Screen.width*0.6f, Screen.height);
     }
 
-    public void topView()
-    {
-        rotation.x = 90;
-        rotation.y = 0;
-    }
-    
-    public void frontView()
-    {
-        rotation.x = 0;
-        rotation.y = 0; 
-    }
-    
-    public void sideView()
-    {
-        rotation.x = 0;
-        rotation.y = 270;
-    }
-    
     void Update() {
 
         if(Input.touchCount > 0)

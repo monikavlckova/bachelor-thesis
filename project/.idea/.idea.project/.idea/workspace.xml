@@ -34,8 +34,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlanDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LongClickButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Plan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Building.cs" />
@@ -45,6 +43,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Floors.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildCube.cs" />
       </list>
     </option>
   </component>
@@ -97,5 +97,24 @@
       <screen x="0" y="0" width="1280" height="688" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.688@0.0.1280.688" timestamp="1587760006963" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Floors.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Floors.cs" initialLine="29">
+            <startOffsets>
+              <option value="902" />
+            </startOffsets>
+            <endOffsets>
+              <option value="934" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

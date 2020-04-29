@@ -90,33 +90,19 @@ public class BuildCube : MonoBehaviour
 
     public void Lock()
     {
-        Debug.Log("lock");
         locked = true;
         button.GetComponent<Image>().enabled = false;
         button.enabled = false;
-        RectTransform rt = (RectTransform) button.transform.parent;
-        rt.sizeDelta = new Vector2(500, 170); 
+        button.transform.parent.GetComponent<Image>().enabled = false;
 
     }
     
     public void Unlock()
     {
-        Debug.Log("unlock");
         locked = false;
         button.GetComponent<Image>().enabled = true;
         button.enabled = true;
-        RectTransform rt = (RectTransform) button.transform.parent;
-        rt.sizeDelta = new Vector2(675, 170); 
-    }
-    
-    public void SetDestroyModeOn()
-    {
-        destroyMode = true;
-    }
-    
-    public void SetDestroyModeOff()
-    {
-        destroyMode = false;
+        button.transform.parent.GetComponent<Image>().enabled = true;
     }
 
 }
