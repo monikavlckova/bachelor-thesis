@@ -11,18 +11,6 @@ public class ProgressBar : MonoBehaviour
     private float progress = 0f;
 
     private Image image;
-    /*private Color32[] colorGardient = new[]{
-        new Color32(128, 20, 20, 255),
-        new Color32(167, 31, 23, 255),
-        new Color32(200, 63, 29, 255),
-        new Color32(207, 84, 29, 255),
-        new Color32(224, 153, 34, 255),
-        new Color32(233, 185, 27, 255),
-        new Color32(180, 206, 35, 255),
-        new Color32(119, 206, 35, 255),
-        new Color32(64, 161, 11, 255),
-        new Color32(11, 125, 43, 255)
-    };*/
 
     void Start()
     {
@@ -32,16 +20,12 @@ public class ProgressBar : MonoBehaviour
             this.transform.parent.gameObject.SetActive(false);
         }
         progress = Data.DATA.progressInLvls[level-1];
-        //int index = progress < colorGardient.Length ? (int) progress : colorGardient.Length-1;
-        //image.color = colorGardient[index];
         image.fillAmount = (progress) / MAX_PROGRESS;
     }
 
     private void Update()
     {
         progress =  Data.DATA.progressInLvls[level-1];
-        //int index = progress < colorGardient.Length ? (int) progress : colorGardient.Length-1;
-        //image.color = colorGardient[index];
         image.fillAmount = progress / MAX_PROGRESS;
     }
     

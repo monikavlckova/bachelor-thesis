@@ -17,7 +17,6 @@ public class Plan
     {
         int min = progress + 2;
         int max = min + 1 + progress/2;
-        Debug.Log(min + " " + max);
         plan = Generate(size, floors, min, max);
     }
 

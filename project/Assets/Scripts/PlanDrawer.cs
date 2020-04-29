@@ -57,7 +57,6 @@ public class PlanDrawer : MonoBehaviour
     
     public int[,] TranslateImagePlanToPlan()
     {
-        Debug.Log("translate");
         int size = (int)Mathf.Sqrt(this.transform.childCount);
         int[,] plan = new int[size,size];
         int i = 0;

@@ -94,5 +94,4 @@ public class Data : MonoBehaviour
             Destroy(gameObject);
         } 
     }
-
 }

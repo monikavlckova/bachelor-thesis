@@ -58,7 +58,4 @@ public class Floors : MonoBehaviour
             textFloors[floor - 1].text = values[floor - 1].ToString();
         }
     }
-    
-    
-
 }

@@ -12,13 +12,13 @@ public class Backlight : MonoBehaviour
     public void switchBacklight()
     {
         isOn = !isOn;
-        this.transform.GetComponent<Image>().color = isOn ? OnColor : OffColor;
+        transform.GetComponent<Image>().color = isOn ? OnColor : OffColor;
     }
 
     public void turnOffBacklight()
     {
         isOn = false;
-        this.transform.GetComponent<Image>().color = OffColor;
+        transform.GetComponent<Image>().color = OffColor;
     }
 }
 

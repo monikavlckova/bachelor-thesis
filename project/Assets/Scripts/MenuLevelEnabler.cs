@@ -21,15 +21,11 @@ public class MenuLevelEnabler : MonoBehaviour
             create.transform.GetComponent<Button>().enabled = false;
             create.transform.GetComponent<Image>().enabled = false;
             createImage.transform.GetComponent<Image>().enabled = false;
-           
         }
         if (level > Data.DATA.highestLevelCompleted + 1)
         {
             GetComponent<Image>().color = Color.black;
             GetComponent<Button>().enabled = false;
-            
         }
-        
-        
     }
 }
