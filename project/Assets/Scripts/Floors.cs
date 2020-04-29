@@ -3,24 +3,31 @@ using UnityEngine.UI;
 
 public class Floors : MonoBehaviour
 {
-    public Text[] textFloors = new Text[5];
-    public int[] values = new int[5];
+    public Text[] textFloors = new Text[4];
+    public int[] values = new int[4];
     public int level;
-    public Button[] buttons = new Button[10]; 
+    public Button[] buttons = new Button[8]; 
 
     private void Start()
     {
-        if (Data.DATA.progressInLvls[level - 1] % 2 == 1 && !Data.DATA.createdTask)
+        if (Data.DATA.progressInLvls[level - 1] % 2 == 1 || (Data.DATA.createdTask && !Data.DATA.buildBuilding))
         {
-            Plan plan = GetComponent<Building>().getPlan();
-            if (level == 3)
+            if (!Data.DATA.createdTask)
             {
-                values[0] = plan.numberOfFloors(plan.getPlan());
-                values[1] = plan.numberOfCubes(plan.getPlan());
+                Plan plan = GetComponent<Building>().getPlan();
+                if (level == 3)
+                {
+                    values[0] = plan.numberOfFloors(plan.getPlan());
+                    values[1] = plan.numberOfCubes(plan.getPlan());
+                }
+                if (level == 4)
+                {
+                    values = plan.cubesInFloors(plan.getPlan());
+                }
             }
-            if (level == 4)
+            else
             {
-                values = plan.cubesInFloors(plan.getPlan());
+                values = Data.DATA.floorsValues;
             }
             for (int i = 0; i < values.Length; i++)
             {
@@ -36,8 +43,11 @@ public class Floors : MonoBehaviour
 
     public void increase(int floor)
     {
-        values[floor - 1] += 1;
-        textFloors[floor - 1].text = values[floor - 1].ToString();
+        if ((level == 3 && floor == 1 && values[floor-1] < 4) || level == 4 || (level == 3  && floor != 1))
+        {
+            values[floor - 1] += 1;
+            textFloors[floor - 1].text = values[floor - 1].ToString();
+        }
     }
     
     public void decrease(int floor)

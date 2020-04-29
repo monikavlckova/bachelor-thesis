@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class OwnTask : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class OwnTask : MonoBehaviour
             GameObject.Find("buildingPlan3").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
             GameObject.Find("buildingPlan4").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
         }
+
+        if (level == 2)
+        {
+            GameObject.Find("buildingPlan").GetComponent<PlanDrawer>().InitializeEmpty(5,5, true);
+        }
     }
 
     public void TranslateBuildingToPlan()
@@ -32,7 +39,7 @@ public class OwnTask : MonoBehaviour
             int x = 2+(int)(cube.position.x);
             int y = 1+(int)(cube.position.y);
             int z = 2-(int)(cube.position.z);
-            if (y > plan[z,x])
+            if (y > plan[z, x])
             {
                 plan[z, x] = y;
             }
@@ -43,7 +50,6 @@ public class OwnTask : MonoBehaviour
 
     public int[,] TranslateImagePlanToPlan(GameObject imagePlan)
     {
-        Debug.Log("translate");
         int[,] plan = new int[5,5];
         int i = 0;
         int j = 0;
@@ -67,21 +73,63 @@ public class OwnTask : MonoBehaviour
         Data.DATA.createdPlan4 = TranslateImagePlanToPlan(plan4);
     }
 
-    public bool IsValid()
+    public bool IsValidLevel(int level)
     {
+        TranslateBuildingToPlan();
         Plan p = new Plan(1,3, 1);
-        return 
-        p.equals(Data.DATA.createdPlan1, Data.DATA.createdBuildingPlan) ^
-        p.equals(Data.DATA.createdPlan2, Data.DATA.createdBuildingPlan) ^
-        p.equals(Data.DATA.createdPlan3, Data.DATA.createdBuildingPlan) ^
-        p.equals(Data.DATA.createdPlan4, Data.DATA.createdBuildingPlan);
+        int [,] emptyPlan = new int[5,5];
+        if (level == 1) 
+        {
+            TranslateAllPlans();
+            return 
+            p.equals(Data.DATA.createdPlan1, Data.DATA.createdBuildingPlan) ^
+            p.equals(Data.DATA.createdPlan2, Data.DATA.createdBuildingPlan) ^
+            p.equals(Data.DATA.createdPlan3, Data.DATA.createdBuildingPlan) ^
+            p.equals(Data.DATA.createdPlan4, Data.DATA.createdBuildingPlan);
+        }
+
+        if (level == 2)
+        {
+            int [,] imagePlan = TranslateImagePlanToPlan(GameObject.Find("buildingPlan"));
+            if (p.equals(plan, emptyPlan) ^ p.equals(imagePlan, emptyPlan)) return false;
+            if (p.equals(plan, emptyPlan)) 
+            {
+                Data.DATA.buildBuilding = false;
+                Data.DATA.createdBuildingPlan = imagePlan;
+            }
+            else Data.DATA.buildBuilding = true;
+            return true;
+        }
+
+        if (level == 3 || level == 4)
+        {
+            int[] values = this.GetComponent<Floors>().values;
+            int[] emptyValues = new int[values.Length];
+            if (p.equals(plan, emptyPlan) ^ values.SequenceEqual(emptyValues))
+            {
+                if (p.equals(plan, emptyPlan))
+                {
+                    Data.DATA.buildBuilding = false;
+                    Data.DATA.floorsValues = values;
+                    int floors = values[0];
+                    int cubess = values[1];
+                    if (level == 3 && (floors > cubess || floors < 1 || cubess > floors*25)) return false;
+                    if (level == 4) for (int i = 1; i < values.Length-1; i++) if (values[i - 1] < values[i]) return false;
+                }
+                else Data.DATA.buildBuilding = true;
+                
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 
     public void LoadCratedTask()
     {
-        if (IsValid())
+        if (IsValidLevel(level))
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(level);
         }
         else
         {

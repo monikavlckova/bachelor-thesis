@@ -30,7 +30,9 @@ public class Building : MonoBehaviour
         }
         HALF = (float) SIZE / 2;
         
-        if (level == 1 || Data.DATA.progressInLvls[level - 1] % 2 == 0 || Data.DATA.createdTask)
+        if (level == 1 || 
+            (Data.DATA.progressInLvls[level - 1] % 2 == 0 && !Data.DATA.createdTask) || 
+            (Data.DATA.createdTask && Data.DATA.buildBuilding))
         {
             Build(plan.getPlan());
             if (level != 1)

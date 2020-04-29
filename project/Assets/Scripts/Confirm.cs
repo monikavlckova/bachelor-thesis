@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Confirm : MonoBehaviour
 {
@@ -90,12 +91,12 @@ public class Confirm : MonoBehaviour
         if (Data.DATA.createdTask)
         {
             Data.DATA.createdTask = false;
-            Application.LoadLevel(level + 4);
+            SceneManager.LoadScene(level + 4);
         }
         else
         {
             Data.DATA.UpdateData(level, Data.DATA.progressInLvls[level-1]+1);
-            Application.LoadLevel(level);
+            SceneManager.LoadScene(level);
         }
     }
     

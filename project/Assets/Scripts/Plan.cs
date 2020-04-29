@@ -125,7 +125,7 @@ public class Plan
 
     public int[] cubesInFloors(int[,] plan)
     {
-        int[] values = new int[5];
+        int[] values = new int[4];
         for (int i = 0; i < plan.GetLength(0); i++)
         {
             for (int j = 0; j < plan.GetLength(1); j++)
