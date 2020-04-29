@@ -17,7 +17,6 @@ public class Data : MonoBehaviour
     public int[,] createdPlan2;
     public int[,] createdPlan3;
     public int[,] createdPlan4;
-    public bool changed = false;
     private void Start()
     {
         path = Path.Combine(Application.persistentDataPath, "data.txt");
@@ -63,7 +62,6 @@ public class Data : MonoBehaviour
         data += highestLevelCompleted;
 
         File.WriteAllText(path, data);
-        changed = true;
         LoadData();
     }
     
@@ -73,7 +71,6 @@ public class Data : MonoBehaviour
         string data = "0\n0\n0\n0\n0";
 
         File.WriteAllText(path, data);
-        changed = true;
         LoadData();
     }
     
@@ -83,7 +80,6 @@ public class Data : MonoBehaviour
         {
             highestLevelCompleted = level;
         }
-        changed = true;
     }
 
     void Awake()

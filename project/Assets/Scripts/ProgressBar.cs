@@ -34,15 +34,7 @@ public class ProgressBar : MonoBehaviour
         progress = Data.DATA.progressInLvls[level-1];
         //int index = progress < colorGardient.Length ? (int) progress : colorGardient.Length-1;
         //image.color = colorGardient[index];
-        if (Data.DATA.changed)
-        {
-            image.fillAmount = (progress - 1) / MAX_PROGRESS;
-            Data.DATA.changed = false;
-        }
-        else
-        {
-            image.fillAmount = (progress) / MAX_PROGRESS;
-        }
+        image.fillAmount = (progress) / MAX_PROGRESS;
     }
 
     private void Update()
@@ -50,11 +42,7 @@ public class ProgressBar : MonoBehaviour
         progress =  Data.DATA.progressInLvls[level-1];
         //int index = progress < colorGardient.Length ? (int) progress : colorGardient.Length-1;
         //image.color = colorGardient[index];
-        if (image.fillAmount <  progress / MAX_PROGRESS)
-        {
-            image.fillAmount += (0.1f * Time.deltaTime);
-        }
-        //image.fillAmount = progress / MAX_PROGRESS;
+        image.fillAmount = progress / MAX_PROGRESS;
     }
     
     
