@@ -92,19 +92,23 @@ public class OwnTask : MonoBehaviour
         if (level == 2)
         {
             int [,] imagePlan = TranslateImagePlanToPlan(GameObject.Find("buildingPlan"));
-            if (p.equals(plan, emptyPlan) ^ p.equals(imagePlan, emptyPlan)) return false;
-            if (p.equals(plan, emptyPlan)) 
+            if (p.equals(plan, emptyPlan) ^ p.equals(imagePlan, emptyPlan))
             {
-                Data.DATA.buildBuilding = false;
-                Data.DATA.createdBuildingPlan = imagePlan;
+                if (p.equals(plan, emptyPlan))
+                {
+                    Data.DATA.buildBuilding = false;
+                    Data.DATA.createdBuildingPlan = imagePlan;
+                }
+                else Data.DATA.buildBuilding = true;
+
+                return true;
             }
-            else Data.DATA.buildBuilding = true;
-            return true;
+            return false;
         }
 
         if (level == 3 || level == 4)
         {
-            int[] values = this.GetComponent<Floors>().values;
+            int[] values = GetComponent<Floors>().values;
             int[] emptyValues = new int[values.Length];
             if (p.equals(plan, emptyPlan) ^ values.SequenceEqual(emptyValues))
             {

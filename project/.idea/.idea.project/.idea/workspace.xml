@@ -41,12 +41,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlanGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlanDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Plan.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Floors.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Backlight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OwnTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" />
       </list>
     </option>
   </component>

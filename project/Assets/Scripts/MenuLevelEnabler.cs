@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,26 +7,42 @@ using UnityEngine.UI;
 public class MenuLevelEnabler : MonoBehaviour
 {
     public int level;
-    
-    void Start()
-    {
-        GetComponent<Image>().color = Color.white;
-        Transform create = transform.Find("Create");
-        Transform createImage = create.transform.Find("Image");
+    private Image image;
+    private Button button;
+    private Transform create;
+    private Image createTransformImage;
+    private Button createButton;
+    private Transform createImage;
+    private Image createImageTransformImage;
 
-        GetComponent<Button>().enabled = true;
-        create.transform.GetComponent<Button>().enabled = true;
+    private void Start()
+    {
+        image = GetComponent<Image>();
+        button = GetComponent<Button>();
+        create = transform.Find("Create");
+        createTransformImage = create.transform.GetComponent<Image>();
+        createButton = create.transform.GetComponent<Button>();
+        createImage = create.transform.Find("Image");
+        createImageTransformImage = createImage.transform.GetComponent<Image>();
+    }
+
+    void Update()
+    {
+        image.color = Color.white;
+
+        button.enabled = true;
+        createButton.enabled = true;
 
         if (level >= Data.DATA.highestLevelCompleted + 1)
         {
-            create.transform.GetComponent<Button>().enabled = false;
-            create.transform.GetComponent<Image>().enabled = false;
-            createImage.transform.GetComponent<Image>().enabled = false;
+            createButton.enabled = false;
+            createTransformImage.enabled = false;
+            createImageTransformImage.enabled = false;
         }
         if (level > Data.DATA.highestLevelCompleted + 1)
         {
-            GetComponent<Image>().color = Color.black;
-            GetComponent<Button>().enabled = false;
+            image.color = Color.black;
+            button.enabled = false;
         }
     }
 }
