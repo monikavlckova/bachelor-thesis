@@ -15,6 +15,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     [SerializeField]
     private Image fillImage;
+    public bool initializedFillImage = false;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -40,7 +41,11 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
                 Reset();
             }
-            fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+
+            if (initializedFillImage)
+            {
+                fillImage.fillAmount = pointerDownTimer / requiredHoldTime;   
+            }
         }
     }
 
@@ -48,7 +53,10 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         pointerDown = false;
         pointerDownTimer = 0;
-        fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+        if (initializedFillImage)
+        {
+            fillImage.fillAmount = pointerDownTimer / requiredHoldTime;   
+        }
     }
 
 }

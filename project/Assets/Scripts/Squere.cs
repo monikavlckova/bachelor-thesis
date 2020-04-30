@@ -23,4 +23,10 @@ public class Squere : MonoBehaviour
             transform.parent.transform.GetComponent<Image>().sprite = null;
         }
     }
+
+    public void LongClick()
+    {
+        index = -1;
+        transform.parent.transform.GetComponent<Image>().sprite = null;
+    }
 }
