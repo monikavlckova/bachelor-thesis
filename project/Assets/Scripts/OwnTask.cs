@@ -75,6 +75,7 @@ public class OwnTask : MonoBehaviour
 
     public bool IsValidLevel(int level)
     {
+        plan = new int[5,5];
         TranslateBuildingToPlan();
         Plan p = new Plan(1,3, 1);
         int [,] emptyPlan = new int[5,5];
