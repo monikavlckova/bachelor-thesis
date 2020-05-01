@@ -9,6 +9,7 @@ public class ProgressBar : MonoBehaviour
     public int level;
     public bool isLevel = false;
     public Button nextLevel;
+    public Button ownTask;
     private const float MAX_PROGRESS = 10f;
     private float progress = 0f;
 
@@ -33,13 +34,23 @@ public class ProgressBar : MonoBehaviour
         {
             if (progress > 9)
             {
-                nextLevel.enabled = true;
-                nextLevel.GetComponent<Image>().enabled = true;
+                if (level < 4)
+                {
+                    nextLevel.enabled = true;
+                    nextLevel.GetComponent<Image>().enabled = true;   
+                }
+                ownTask.enabled = true;
+                ownTask.GetComponent<Image>().enabled = true;
             }
             else
             {
-                nextLevel.enabled = false;
-                nextLevel.GetComponent<Image>().enabled = false;
+                if (level < 4)
+                {
+                    nextLevel.enabled = false;
+                    nextLevel.GetComponent<Image>().enabled = false;
+                }
+                ownTask.enabled = false;
+                ownTask.GetComponent<Image>().enabled = false;
             }
         }
     }

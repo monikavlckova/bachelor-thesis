@@ -154,6 +154,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 0}
+  initializedFillImage: 0
 --- !u!1 &9221334012637611219
 GameObject:
   m_ObjectHideFlags: 0
