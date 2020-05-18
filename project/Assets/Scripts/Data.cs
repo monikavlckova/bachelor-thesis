@@ -64,7 +64,12 @@ public class Data : MonoBehaviour
         File.WriteAllText(path, data);
         LoadData();
     }
-    
+
+    public void ResetLevel(int level)
+    {
+        UpdateData(level, 0);
+    }
+
     public void ResetData()
     {
         path = Path.Combine(Application.persistentDataPath, "data.txt");

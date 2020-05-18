@@ -14,6 +14,7 @@ public class MenuLevelEnabler : MonoBehaviour
     private Button createButton;
     private Transform createImage;
     private Image createImageTransformImage;
+    private Image lockImage;
 
     private void Start()
     {
@@ -24,12 +25,14 @@ public class MenuLevelEnabler : MonoBehaviour
         createButton = create.transform.GetComponent<Button>();
         createImage = create.transform.Find("Image");
         createImageTransformImage = createImage.transform.GetComponent<Image>();
+        lockImage = transform.Find("Lock").transform.GetComponent<Image>();
     }
 
     void Update()
     {
         image.color = Color.white;
-
+        lockImage.enabled = false;
+        
         button.enabled = true;
         createButton.enabled = true;
 
@@ -43,6 +46,7 @@ public class MenuLevelEnabler : MonoBehaviour
         {
             image.color = Color.black;
             button.enabled = false;
+            lockImage.enabled = true;
         }
     }
 }

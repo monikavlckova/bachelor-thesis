@@ -23,4 +23,11 @@ public class ChangeScene : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ShowHide(GameObject obj)
+    {
+        obj.GetComponent<CanvasGroup>().alpha = obj.GetComponent<CanvasGroup>().alpha == 0f ? 1f : 0f;
+        obj.GetComponent<CanvasGroup>().blocksRaycasts = !obj.GetComponent<CanvasGroup>().blocksRaycasts;
+        
+    }
 }
