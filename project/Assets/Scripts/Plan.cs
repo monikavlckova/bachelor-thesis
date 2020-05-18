@@ -15,6 +15,7 @@ public class Plan
 
     public Plan(int size, int floors, int progress)
     {
+        if (progress > 20) progress = 20; 
         int min = progress + 2;
         int max = min + 1 + progress/2;
         plan = Generate(size, floors, min, max);

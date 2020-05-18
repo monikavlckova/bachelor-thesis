@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class BuildCube : MonoBehaviour
@@ -13,14 +14,19 @@ public class BuildCube : MonoBehaviour
     public Sprite destroyImage;
     public Sprite buildImage;
     public Button button;
-
     public int SIZE = 5;
-
+    
+    private Vector2 TouchStartPosition;
+    private Vector2 TouchEndPosition;
+    private Vector3 MouseStartPosition;
+    private Vector3 MouseEndPosition;
     // Update is called once per frame
     void Update()
     {
-        if ((!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            || (!locked && Input.touchCount == 0 && Input.GetMouseButtonDown(0)))
+        SetPositions();
+
+        if ((!locked && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !TouchMoved())
+            || (!locked && Input.touchCount == 0 && Input.GetMouseButtonUp(0))&& !MouseMoved())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -28,7 +34,7 @@ public class BuildCube : MonoBehaviour
             {
                 Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
                 Vector3 cubePosition = hit.point + hit.normal / 2.0f;
-
+                
                 if (SIZE % 2 == 0) cubePosition += offset;
 
                 cubePosition.x = (float) Math.Round(cubePosition.x, MidpointRounding.AwayFromZero);
@@ -46,6 +52,29 @@ public class BuildCube : MonoBehaviour
         }
     }
 
+    private bool TouchMoved()
+    {
+        Vector2 delta = TouchStartPosition - TouchEndPosition;
+        return delta.x < -15f || delta.x > 15f || delta.y < -15f || delta.y > 15f;
+    }
+
+    private bool MouseMoved()
+    {
+        Vector3 delta = MouseStartPosition - MouseEndPosition;
+        return delta.x != 0 || delta.y != 0;
+    }
+
+    private void SetPositions()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began) TouchStartPosition = touch.position;
+            if (touch.phase == TouchPhase.Ended) TouchEndPosition = touch.position;
+        }
+        if (Input.GetMouseButtonDown(0)) MouseStartPosition = Input.mousePosition;
+        if (Input.GetMouseButtonUp(0)) MouseEndPosition = Input.mousePosition;
+    }
     private bool UnderCubeIsCube(Vector3 cubePosition)
     {
         foreach (Transform cube1 in transform)
@@ -84,8 +113,8 @@ public class BuildCube : MonoBehaviour
     public void ChangeDestroyModeState()
     {
         destroyMode = !destroyMode;
-        if (destroyMode) button.GetComponent<Image>().sprite = destroyImage;
-        else button.GetComponent<Image>().sprite = buildImage;
+        if (destroyMode) button.GetComponent<Image>().sprite = buildImage;
+        else button.GetComponent<Image>().sprite = destroyImage;
     }
 
     public void Lock()
@@ -94,7 +123,6 @@ public class BuildCube : MonoBehaviour
         button.GetComponent<Image>().enabled = false;
         button.enabled = false;
         button.transform.parent.GetComponent<Image>().enabled = false;
-
     }
     
     public void Unlock()

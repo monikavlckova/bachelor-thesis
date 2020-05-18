@@ -100,6 +100,7 @@ public class Building : MonoBehaviour
             GameObject.Destroy(cube.gameObject);
         }
     }
+    
     public Plan getPlan()
     {
         return plan;
