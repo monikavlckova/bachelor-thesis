@@ -32,7 +32,7 @@ public class ProgressBar : MonoBehaviour
         image.fillAmount = progress / MAX_PROGRESS;
         if (isLevel)
         {
-            if (progress > 9)
+            if (Data.DATA.highestLevelCompleted >= level)
             {
                 if (level < 4)
                 {

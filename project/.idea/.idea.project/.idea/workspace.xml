@@ -39,7 +39,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/OwnTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LongClickButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Squere.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Plan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Confirm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Building.cs" />
@@ -48,6 +47,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuLevelEnabler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" />
       </list>
     </option>
   </component>
