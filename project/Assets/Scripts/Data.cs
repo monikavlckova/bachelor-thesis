@@ -52,7 +52,7 @@ public class Data : MonoBehaviour
 
     public void UpdateData(int level, int progress)
     {
-        increaseHeighestLevel(level, progress);
+        increaseHighestLevel(level, progress);
         path = Path.Combine(Application.persistentDataPath, "data.txt");
         string data = "";
 
@@ -65,11 +65,6 @@ public class Data : MonoBehaviour
         LoadData();
     }
 
-    public void ResetLevel(int level)
-    {
-        UpdateData(level, 0);
-    }
-
     public void ResetData()
     {
         path = Path.Combine(Application.persistentDataPath, "data.txt");
@@ -79,7 +74,7 @@ public class Data : MonoBehaviour
         LoadData();
     }
     
-    private void increaseHeighestLevel(int level, int progress)
+    private void increaseHighestLevel(int level, int progress)
     {
         if (progress > 9 && level > highestLevelCompleted)
         {

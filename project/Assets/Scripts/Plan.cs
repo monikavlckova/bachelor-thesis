@@ -6,7 +6,6 @@ public class Plan
 {
     private int[,] plan;
     private Random rnd = new Random();
-    private int level;
 
     public int[,] getPlan()
     {
@@ -46,7 +45,7 @@ public class Plan
         return buildingPlan;
     }
 
-    private bool isBuilding(int[,] buildingPlan, int min, int max)
+    public bool isBuilding(int[,] buildingPlan, int min, int max)
     {
         int size = buildingPlan.GetLength(0);
 

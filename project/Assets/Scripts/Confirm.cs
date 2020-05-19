@@ -51,7 +51,7 @@ public class Confirm : MonoBehaviour
         int floors = plan.numberOfFloors(plan.getPlan());
         int cubes = plan.numberOfCubes(plan.getPlan());
         int[] values = GetComponent<Floors>().values;
-        if (values[0] == floors && values[1] == cubes)
+        if (plan.isBuilding(plan.getPlan(), 1, 100) && values[0] == floors && values[1] == cubes)
         {
             _enumerator = GetComponent<Notification>().show(true);
             this.StartCoroutine(_enumerator);
@@ -71,7 +71,7 @@ public class Confirm : MonoBehaviour
         int[] realValues = plan.cubesInFloors(plan.getPlan());
         int[] values = GetComponent<Floors>().values;
         
-        if (values.SequenceEqual(realValues))
+        if (plan.isBuilding(plan.getPlan(), 1, 100) && values.SequenceEqual(realValues))
         {
             _enumerator = GetComponent<Notification>().show(true);
             this.StartCoroutine(_enumerator);
@@ -96,7 +96,12 @@ public class Confirm : MonoBehaviour
         else
         {
             Data.DATA.UpdateData(level, Data.DATA.progressInLvls[level-1]+1);
-            SceneManager.LoadScene(level);
+            //SceneManager.LoadScene(level);
+            if (Data.DATA.progressInLvls[level-1] == 10 )
+            {
+                SceneManager.LoadScene(level+8);
+            }
+            else SceneManager.LoadScene(level);
         }
     }
     

@@ -32,4 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl4custom.unity
     guid: d9e97b3ec8470e54bbb92a5a3cdc9985
+  - enabled: 1
+    path: Assets/Scenes/level1Compleated.unity
+    guid: a72fe5990e61f6d40b72d5c0e5f514b0
+  - enabled: 1
+    path: Assets/Scenes/level2Compleated.unity
+    guid: b6f634fd85d11a344b0f4660a3b3592a
+  - enabled: 1
+    path: Assets/Scenes/level3Compleated.unity
+    guid: d128e24d39ed490448ac9f631aa73c00
+  - enabled: 1
+    path: Assets/Scenes/level4Compleated.unity
+    guid: a0af91f527203054fa1365152ea6f69f
   m_configObjects: {}

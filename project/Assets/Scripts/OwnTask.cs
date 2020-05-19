@@ -82,16 +82,17 @@ public class OwnTask : MonoBehaviour
         if (level == 1) 
         {
             TranslateAllPlans();
-            return 
-            p.equals(Data.DATA.createdPlan1, Data.DATA.createdBuildingPlan) ^
-            p.equals(Data.DATA.createdPlan2, Data.DATA.createdBuildingPlan) ^
-            p.equals(Data.DATA.createdPlan3, Data.DATA.createdBuildingPlan) ^
-            p.equals(Data.DATA.createdPlan4, Data.DATA.createdBuildingPlan);
+            return p.isBuilding(plan, 1, 100) && 
+                   (p.equals(Data.DATA.createdPlan1, plan) ^
+                    p.equals(Data.DATA.createdPlan2, plan) ^
+                    p.equals(Data.DATA.createdPlan3, plan) ^
+                    p.equals(Data.DATA.createdPlan4, plan));
         }
 
         if (level == 2)
         {
             int [,] imagePlan = TranslateImagePlanToPlan(GameObject.Find("buildingPlan"));
+
             if (p.equals(plan, emptyPlan) ^ p.equals(imagePlan, emptyPlan))
             {
                 if (p.equals(plan, emptyPlan))
@@ -100,7 +101,9 @@ public class OwnTask : MonoBehaviour
                     Data.DATA.createdBuildingPlan = imagePlan;
                 }
                 else Data.DATA.buildBuilding = true;
-
+                
+                if (!p.isBuilding(Data.DATA.createdBuildingPlan, 1, 100)) return false;
+                
                 return true;
             }
             return false;
@@ -121,7 +124,12 @@ public class OwnTask : MonoBehaviour
                     if (level == 3 && (floors > cubess || floors < 1 || cubess > floors*25)) return false;
                     if (level == 4) for (int i = 1; i < values.Length-1; i++) if (values[i - 1] < values[i]) return false;
                 }
-                else Data.DATA.buildBuilding = true;
+                else
+                {
+                    if (!p.isBuilding(Data.DATA.createdBuildingPlan, 1, 100)) return false;
+                    Data.DATA.buildBuilding = true;
+                    
+                }
                 
                 return true;
             }

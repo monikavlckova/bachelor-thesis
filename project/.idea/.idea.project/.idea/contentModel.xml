@@ -16,6 +16,7 @@
           <e p="Confirm.cs" t="Include" />
           <e p="Data.cs" t="Include" />
           <e p="Floors.cs" t="Include" />
+          <e p="Gif.cs" t="Include" />
           <e p="LongClickButton.cs" t="Include" />
           <e p="MenuLevelEnabler.cs" t="Include" />
           <e p="Notification.cs" t="Include" />
